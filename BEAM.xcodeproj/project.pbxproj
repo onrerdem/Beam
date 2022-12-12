@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1314CCA82947D3C500CDCCB1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1314CCA72947D3C500CDCCB1 /* Kingfisher */; };
 		13EF0E3E29462A5200F68066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EF0E3D29462A5200F68066 /* AppDelegate.swift */; };
 		13EF0E4029462A5200F68066 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EF0E3F29462A5200F68066 /* SceneDelegate.swift */; };
 		13EF0E4229462A5200F68066 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EF0E4129462A5200F68066 /* LoginVC.swift */; };
@@ -45,12 +46,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1314CCA82947D3C500CDCCB1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1314CCA529474B5F00CDCCB1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				13EF0E6229467AFA00F68066 /* APIError.swift */,
+				13EF0E60294679B800F68066 /* WebAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		13EF0E3129462A5200F68066 = {
 			isa = PBXGroup;
 			children = (
@@ -75,10 +86,9 @@
 				13EF0E4629462A5300F68066 /* Assets.xcassets */,
 				13EF0E4829462A5300F68066 /* LaunchScreen.storyboard */,
 				13EF0E4B29462A5300F68066 /* Info.plist */,
+				1314CCA529474B5F00CDCCB1 /* Network */,
 				13EF0E5C2946627300F68066 /* Model */,
 				13EF0E5829463D5000F68066 /* Constant.swift */,
-				13EF0E6229467AFA00F68066 /* APIError.swift */,
-				13EF0E60294679B800F68066 /* WebAPI.swift */,
 				13EF0E4329462A5200F68066 /* Main.storyboard */,
 				13EF0E4129462A5200F68066 /* LoginVC.swift */,
 				13EF0E5A2946623300F68066 /* DashboardVC.swift */,
@@ -112,6 +122,9 @@
 			dependencies = (
 			);
 			name = BEAM;
+			packageProductDependencies = (
+				1314CCA72947D3C500CDCCB1 /* Kingfisher */,
+			);
 			productName = BEAM;
 			productReference = 13EF0E3A29462A5200F68066 /* BEAM.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 13EF0E3129462A5200F68066;
+			packageReferences = (
+				1314CCA62947D3C500CDCCB1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 13EF0E3B29462A5200F68066 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1314CCA62947D3C500CDCCB1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1314CCA72947D3C500CDCCB1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1314CCA62947D3C500CDCCB1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13EF0E3229462A5200F68066 /* Project object */;
 }

@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomCell: UITableViewCell {
 
     @IBOutlet weak var ModuleImg: UIImageView!
     @IBOutlet weak var ModuleName: UILabel!
+    var imgURL : String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        ModuleImg.kf.setImage(with: URL(string: Constant.baseURL+imgURL))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,5 +25,6 @@ class CustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

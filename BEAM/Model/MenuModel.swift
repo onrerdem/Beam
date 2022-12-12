@@ -34,7 +34,7 @@ class MenuResponseModel: Codable {
     
     var hasError: Bool?
     let errorMessage: String?
-    let result: [Menu]?
+    let result: [Menu]
 
     enum CodingKeys: String, CodingKey {
         case hasError = "HasError"
@@ -42,7 +42,7 @@ class MenuResponseModel: Codable {
         case result = "Result"
     }
 
-    init(hasError: Bool? = nil, errorMessage: String?, result: [Menu]?) {
+    init(hasError: Bool? = nil, errorMessage: String?, result: [Menu]) {
         self.hasError = hasError
         self.errorMessage = errorMessage
         self.result = result
