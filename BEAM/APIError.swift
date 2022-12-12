@@ -7,11 +7,14 @@
 
 import Foundation
 
-enum APIError: String {
+enum APIError: String,Error {
     
     case URLError
     case EncodeError
     case DecodeError
+    case StatusError
+    case NoData
+    case NoConnection
     
  
 }

@@ -20,7 +20,7 @@ class MenuRequestModel : Codable{
         case token = "Token"
         case instanceName = "InstanceName"
     }
-    init(type: String? = "1", token: String? = nil, instanceName: String? = "ELDOR") {
+    init(type: String?, token: String? = nil, instanceName: String?) {
         self.type = type
         self.token = token
         self.instanceName = instanceName
