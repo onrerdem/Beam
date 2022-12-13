@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     var signIn : Bool = false
     var tokenData : String = ""
     var service = WebAPI()
-    
+    var loginList : [Login] = []
     
     
     
@@ -50,31 +50,29 @@ class LoginVC: UIViewController {
     
     func isLogin(userCode : String, userPass : String) -> Void {
         service.LoginPost(userCode: userCode, userPass: userPass) { [weak self] result in
-            switch result {
-            case .success(let loginResults):
-                do{
-                    let logResult = try JSONSerialization.jsonObject(with: loginResults, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any>
-                    DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let loginResults):
+                    /*if let response = logResult["result"] as? [String : Any] {
                         
-                        if let response = logResult["result"] as? [String : Any] {
-                            
-                            if let tkn = response["token"] as? String {
-                                self.tokenData = tkn
-                                self.signIn = true
-                            }
+                        if let tkn = response["token"] as? String {
+                            self.tokenData = tkn
+                            self.signIn = true
                         }
+                    }*/
+                    for logRes in loginResults.result{
+                        self?.loginList.append(logRes)
                         
+                        if let tkn = self?.loginList[0].token as? String {
+                            self?.tokenData = tkn
+                        }
                     }
-                }catch {
-                    print("error")
-                }
-            case failure(_):
-                DispatchQueue.main.async {
-                    self.signIn = false
+                    
+                case .failure(_):
+                    self?.signIn = false
                 }
             }
         }
-        
     }
     
     

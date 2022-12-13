@@ -20,6 +20,8 @@ class DashboardVC: UIViewController {
         dashboardTv.delegate = self
         dashboardTv.dataSource = self
         
+        getMenu(token: tokenData)
+        
     }
     
     func getMenu(token : String) -> Void {

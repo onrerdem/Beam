@@ -45,7 +45,7 @@ class LoginRequestModel: Codable {
         
         var hasError: Bool?
         var errorMessage: String?
-        var result: [Login]?
+        var result: [Login]
 
         enum CodingKeys: String, CodingKey {
             case hasError = "HasError"
@@ -54,7 +54,7 @@ class LoginRequestModel: Codable {
         }
 
         
-        init(hasError: Bool? = nil, errorMessage: String? = nil, result: [Login]? = nil) {
+        init(hasError: Bool? = nil, errorMessage: String? = nil, result: [Login] = []) {
             self.hasError = hasError
             self.errorMessage = errorMessage
             self.result = result
